@@ -16,15 +16,19 @@ void Student::setStudentHobby(std::string hobbyString)
 void Student::setStudentID(std::string studentID)
 {
 	int tempInt;
-	//add error checking to ensure proper length
-	tempInt = atoi(studentID.c_str());
+	std::stringstream stream;
+	stream << studentID;
+	if (!(stream >> tempInt || studentID.length() != 5)){
+		//could not convert
+	}
+	else
 	mStudentID = tempInt;
 }
 void Student::setStudentName(std::string nameString)
 {
 	mStudentName = nameString;
 }
-void Student::displayStudentInfo(int iD)
+void Student::displayStudentInfo(const std::string iD)
 {
 	std::cout << "Student Information for student ID: " << iD << std::endl;
 	std::cout << mStudentName << std::endl;

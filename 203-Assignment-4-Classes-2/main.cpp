@@ -6,9 +6,10 @@ int main()
 {
 	Student stu1;
 	string tempString = "";
+	string tempString2 = "";
 	cout << "Enter ID: ";
-	getline(cin, tempString);
-	stu1.setStudentID(tempString);
+	getline(cin, tempString2);
+	stu1.setStudentID(tempString2);
 	cout << "Enter Name: ";
 	tempString.clear();
 	getline(cin, tempString);
@@ -17,10 +18,8 @@ int main()
 	tempString.clear();
 	getline(cin, tempString);
 	stu1.setStudentHobby(tempString);
-	cout << "Enter ID: ";
-	getline(cin, tempString);
-	stu1.setStudentID(tempString);
-	stu1.displayStudentInfo(atoi(tempString.c_str()));
+	
+	stu1.displayStudentInfo(tempString2);
 	cin.get();
 	return 0;
 }

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <sstream>
 class Student
 {
 private:
@@ -16,7 +17,7 @@ public:
 	void setStudentHobby(std::string);
 	void setStudentID(std::string);
 	void setStudentID(int);
-	void displayStudentInfo(const int);
+	void displayStudentInfo(const std::string);
 	~Student();
 };
 
