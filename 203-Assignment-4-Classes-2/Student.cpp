@@ -50,7 +50,7 @@ void Student::setStudentName(const std::string nameString)
 }
 
 //copy constructor
-Student::Student(Student& studentSource)
+Student::Student(const Student& studentSource)
 {
 	mStudentID = studentSource.mStudentID;
 	mStudentName = studentSource.mStudentName;

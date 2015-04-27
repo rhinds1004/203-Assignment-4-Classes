@@ -16,7 +16,7 @@ private:
 public:
 	Student();
 	Student(const std::string, const std::string studentName, const std::string studentHobby);
-	Student(Student& const studentCopy);
+	Student(const Student&  studentCopy);
 	//setters
 	void setStudentName(const std::string);
 	void setStudentHobby(const std::string);
