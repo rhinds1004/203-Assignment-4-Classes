@@ -6,34 +6,37 @@ int main()
 {
 	Student **stuArray = new Student *[3] ;
 	*(stuArray+0) = new Student();
-	*(stuArray + 1) = new Student();
+	//Initilizing using Overloaded constructor.
 	stuArray[2] = new Student("45678", "Niki", "Sleeping");
-	//stuArray[1] = new Student();
-	string tempString = "";
-	string tempString2 = "";
-	cout << "Enter ID: ";
-	getline(cin, tempString2);
-	stuArray[0]->setStudentID(tempString2);
-	cout << "Enter Name: ";
-	tempString.clear();
-	getline(cin, tempString);
-	stuArray[0]->setStudentName(tempString);
-	cout << "Enter Hobby: ";
-	tempString.clear();
-	getline(cin, tempString);
-	stuArray[0]->setStudentHobby(tempString);
+	stuArray[1] = new Student();
+	
+	//Initilzing element 0's member variables.
+	cout << "** Showing setter functions **" << endl;
+	cout << "Enter ID: 12345" << endl;
+	stuArray[0]->setStudentID("12345");
+	cout << "Enter Name: Robert Hinds" << endl;
+	stuArray[0]->setStudentName("Robert Hinds");
+	cout << "Enter Hobby: Sleeping"<< endl;
+	stuArray[0]->setStudentHobby("Sleeping");
+	//Using copy constructor to make a new Student object.
 	Student stuArrayTemp(**(stuArray+0));
 	*(stuArray[1]) = stuArrayTemp;
-	stuArray[0]->displayStudentInfo(tempString2);
-	stuArray[0]->changeStudentInfo(tempString2, "Jack", "Being cute.");
-	stuArray[1]->displayStudentInfo(tempString2);
-	stuArray[0]->displayStudentInfo(tempString2);
+	//Using displayStudentInfo function.
+	cout << "** Showing displayStudentInfo function which uses getter functions **" << endl;
+	stuArray[0]->displayStudentInfo("12345");
+	//Using changeStudentInfo function to change name and hobby only.
+	stuArray[0]->changeStudentInfo("12345", "Jack", "Being cute.");
+	cout << "** Showing result of copy constructor **" << endl;
+	stuArray[1]->displayStudentInfo("12345");
+	cout << "** Showing result of changeStudentInfo function **" << endl;
+	stuArray[0]->displayStudentInfo("12345");
+	cout << "** Displaying Overloaded constructor **" << endl;
 	stuArray[2]->displayStudentInfo("45678");
 	cin.get();
 	delete stuArray[0];
 	delete stuArray[1];
 	delete stuArray[2];
-	delete[3] stuArray;
+	delete[] stuArray;
 	
 	return 0;
 }

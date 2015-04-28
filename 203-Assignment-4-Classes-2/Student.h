@@ -8,9 +8,9 @@
 class Student
 {
 private:
-	std::string mStudentName = "";
-	std::string mStudentHobby = "";
-	int mStudentID = 00000;
+	std::string mStudentName;
+	std::string mStudentHobby;
+	int mStudentID;
 	int convertID(const std::string);
 
 public:
@@ -23,15 +23,15 @@ public:
 	void setStudentID(const std::string);
 	void setStudentID(const int);
 	//accessors
-	int Student::getStudentID()
+	int getStudentID() 
 	{
 		return mStudentID;
 	}
-	std::string Student::getStudentHobby()
+	std::string getStudentHobby()
 	{
 		return mStudentHobby;
 	}
-	std::string Student::getStudentName()
+	std::string getStudentName()
 	{
 		return mStudentName;
 	}
